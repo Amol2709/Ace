@@ -46,7 +46,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'CoreApp'
+    'crispy_forms',
+    'CoreApp',
+    'Authentication'
 ]
 
 MIDDLEWARE = [
@@ -143,6 +145,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+#STATICFILES_DIRS = [BASE_DIR / 'static']
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+LOGIN_REDIRECT_URL = 'home'
+LOGIN_URL = 'login'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -153,6 +159,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ######-##------------3rd PartyAPI API-------------------############################
 #         Google API                    #
-
- 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS']=r'C:\Users\DELL\Desktop\AssignmentSolution\Ace\Ace\GoogleAPICredential.json'

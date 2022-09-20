@@ -37,3 +37,7 @@ def checkAPI(request):
     print(result)
     return HttpResponse('None')
 
+
+def home(request):
+    return render(request, 'CoreApp/home.html')
+
