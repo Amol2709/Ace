@@ -41,3 +41,6 @@ def checkAPI(request):
 def home(request):
     return render(request, 'CoreApp/home.html')
 
+def uploadFileToDB(request):
+    print('HHHHHHHHHHHHHHHHHHHHHH')
+

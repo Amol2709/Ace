@@ -7,5 +7,6 @@ app_name = "CoreApp"
 
 urlpatterns = [
     path("", views.home, name="home"),
+    path("uploadToDB",views.uploadFileToDB, name = "upload_file_to_db")
     
     ]
