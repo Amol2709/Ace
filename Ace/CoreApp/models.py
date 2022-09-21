@@ -8,7 +8,7 @@ class FarmerInfo(models.Model):
     state_name =    models.CharField(max_length=50, null=True)
     district_name = models.CharField(max_length=50, null=True)
     village_name =  models.CharField(max_length=50, null=True)
-    phone =         PhoneNumberField(unique=True)
+    phone =         PhoneNumberField()
 
     text_column_1 = models.TextField(null=True)
     text_column_2 = models.TextField(null=True)

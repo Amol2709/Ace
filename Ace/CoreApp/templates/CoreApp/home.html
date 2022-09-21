@@ -1,5 +1,70 @@
-{% extends "Authentication/base.html" %}
+{% extends "CoreApp/base.html" %}
 
 {% block content %}
-<h1>Hey There Welcome!!!!!!!!!!</h1>
+<style>
+.wrapper {
+  text-align: center;
+}
+
+.button_div {
+  position: absolute;
+  top: 45%;
+  left:45%;
+}
+  </style>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+ {% if messages %}
+ {% for message in messages %}
+ <div class="alert alert-{{ message.tags }}">
+   {{ message }}
+ </div>
+ {% endfor %}
+ {% endif %}
+
+<div class="wrapper">
+    <div class="button_div">
+        <button type="button" class=" btn btn-secondary btn-lg" data-toggle="modal" data-target="#myModal">Upload Data</button>
+    </div>
+</div>
+
+<!-- Modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Browse Excel File</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form action="{% url 'CoreApp:validate_file' %}" method="POST" id="formsubmit" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-outline mb-4">
+                  <div class="custom-file">
+                    <input type="file"  id="myFile" name="filename" style="color:black;" required>
+                    <div class="row mb-4">
+                      <div class="col">
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               
+                <button type="submit" id = uploadsubmit class="btn btn-dark btn-block mb-4">Submit</button>
+              
+              </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 {% endblock content %}

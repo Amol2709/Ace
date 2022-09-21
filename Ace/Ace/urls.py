@@ -21,5 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #path('home/', views.checkAPI, name='checkAPI'),
     path('authentication/',include('Authentication.urls', namespace='authentication')),
-    path('home/',include('CoreApp.urls', namespace='app')),
+    path('',include('CoreApp.urls', namespace='app')),
 ]
