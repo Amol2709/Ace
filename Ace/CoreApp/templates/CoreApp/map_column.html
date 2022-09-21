@@ -1,0 +1,208 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+<title>exceloperation</title>
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<link rel="stylesheet" href="{% static 'CoreApp/style.css' %}">
+
+
+      <!-- CSS only bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+<style type="text/css">
+  input[type=file]::file-selector-button {
+    border: 2px solid #6c5ce7;
+    padding: .2em .4em;
+    border-radius: .2em;
+    background-color: #a29bfe;
+    transition: 1s;
+  }
+
+  input[type=file]::file-selector-button:hover {
+    background-color: #81ecec;
+    border: 2px solid #00cec9;
+  }
+  
+
+  .modal-contentt{
+      width: 70%;
+      height: auto;
+      background-color:rgb(20, 216, 200);
+      border-radius: 4px;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+  }
+  
+</style>
+
+<script>
+  $(document).ready(function(){
+    $("#myModal").modal('show');
+  });
+</script>
+</head>
+
+<body style="background: #051622;">
+  <div class="loader_news" style="display:none">
+    <h2 style="margin-top: 10%; color: snow;">Smart Categorizer<br>Forming Initial Groups...</h2>
+        <div class="mosaic-loader">
+          <div class="cell d-0"></div>
+          <div class="cell d-1"></div>
+          <div class="cell d-2"></div>
+          <div class="cell d-3"></div>
+          <div class="cell d-1"></div>
+          <div class="cell d-2"></div>
+          <div class="cell d-3"></div>
+          <div class="cell d-4"></div>
+          <div class="cell d-2"></div>
+          <div class="cell d-3"></div>
+          <div class="cell d-4"></div>
+          <div class="cell d-5"></div>
+          <div class="cell d-3"></div>
+          <div class="cell d-4"></div>
+          <div class="cell d-5"></div>
+          <div class="cell d-6"></div>
+        </div>
+  </div>
+  <div class="wrapper">
+    <div class="sidebar">
+      
+      <ul>
+        <li>
+          <a href="{% url 'CoreApp:home' %}" >
+              <span class="icon"><i class="fas fa-home"></i></span>
+              <span class="item">Home</span>
+          </a>
+        </li>
+        <li>
+          <a href="{% url 'Authentication:logout' %}">
+              <span class="icon"><i class="fas fa-cog"></i></span>
+              <span class="item">Logout</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="section"> 
+      <div class="top_navbar"> 
+          <div class="hamburger">
+              <a>
+                  <i class="fas fa-bars" style="color:  #1BA098;"></i>
+              </a>
+          </div>
+      </div>
+      <div id="mytableID_1" style=" display: block; margin:0 auto;"class="p-4 p-md-5  container">
+        <h3 class="mb-4"style="color: #99A3A4;">Map Column</h3>
+        <form action="{% url 'CoreApp:upload_file_to_db' %}" method="POST">
+          {% csrf_token %}
+          <input type="hidden"  name="file_name" value= "{{ file_name }}" >
+        <table  style=" width: 130%;"  class="table table-striped sampleTable table table-bordered table-dark table-hover ">
+          <thead>
+            <tr> 
+              <th style="color:#d4dce6;font-size: 20px;font-family: Arial, Helvetica, sans-serif;">Column Name</th> 
+              
+              <th data-sortas="numeric"  style="color:#d4dce6;font-size: 20px;font-family: Arial, Helvetica, sans-serif;" >Mapped Column Name</th> 
+            </tr>
+          </thead>
+          <tr>
+            <td style="color:#DEB992;font-size: 18px;">First Name : </td>
+            <td>
+              <select name="first_name" id="first_name" required>
+                 <option value="" name="first_name_col" style="background-color: #0b5753;"></option>
+                  {% for i  in columns_list  %}
+                      <option value="{{ i }}" name="first_name_col" style="background-color: #0b5753;">{{ i }}</option>
+                  {% endfor %}
+              </select>
+            </td> 
+          </tr> 
+           
+           <tr>
+            <td style="color:#DEB992;font-size: 18px;">Last Name : </td>
+            <td>
+              <select name="last_name" id="last_name" required>
+                  <option value="" name="last_name_col" style="background-color: #0b5753;"></option>
+                  {% for i  in columns_list  %}
+                    <option value="{{ i }}" name="last_name_col" style="background-color: #0b5753;">{{ i }}</option>
+                  {% endfor %}
+                </select>
+            </td> 
+          </tr>
+           <tr>
+            <td style="color:#DEB992;font-size: 18px;">State Name: </td>
+            <td>
+              <select name="state_name" id="state_name" required>
+                <option value="" name="state_name_col" style="background-color: #0b5753;"></option>
+                {% for i  in columns_list  %}
+                  <option value="{{ i }}" name="state_name_col" style="background-color: #0b5753;">{{ i }}</option>
+                {% endfor %}
+              </select>
+            </td> 
+          </tr>
+           <tr>
+            <td style="color:#DEB992;font-size: 18px;">District Name: </td>
+            <td>
+              <select name="district_name" id="district_name" required>
+                <option value="" name="district_name_col" style="background-color: #0b5753;"></option>
+                {% for i  in columns_list  %}
+                  <option value="{{ i }}" name="district_name_col" style="background-color: #0b5753;">{{ i }}</option>
+                {% endfor %}
+              </select>
+            </td> 
+          </tr>
+           <tr>
+            <td style="color:#DEB992;font-size: 18px;">Village Name: </td>
+            <td>
+              <select name="village_name" id="village_name" required>
+                <option value="" name="vilage_name_col" style="background-color: #0b5753;"></option>
+                {% for i  in columns_list  %}
+                  <option value="{{ i }}" name="village_name_col" style="background-color: #0b5753;">{{ i }}</option>
+                {% endfor %}
+              </select>
+            </td> 
+          </tr>
+          <tr>
+            <td style="color:#DEB992;font-size: 18px;">ContactNumber: </td>
+            <td>
+              <select name="contact_number" id="contact_number" style="width: 31%;" required>
+              <option value="" name="contact_number_col" style="background-color: #0b5753;"></option>
+              {% for i  in columns_list %}
+                <option value="{{ i }}" name="contact_number_col" style="background-color: #0b5753;">{{ i }}</option>
+              {% endfor %}
+            </select>
+            </td> 
+          </tr>
+          
+          
+
+           
+          
+        </table>
+        <br>
+        <br>
+        <button type="submit"name="flagvalue" value="0" id = "submitbutton" class="btn btn-outline-info btn-block mb-4 submit_class" >Submit</button> 
+      </div>
+    </div>
+  </div>
+  <script>
+var hamburger = document.querySelector(".hamburger");
+    hamburger.addEventListener("click", function(){
+        document.querySelector("body").classList.toggle("active");
+    })
+  </script>
+  
+</body>
+</html>
+   
+
+
+
+
+
