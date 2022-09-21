@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import JsonResponse,HttpResponse,HttpResponseRedirect
 from .Enums import SupportedFile
 from .FileUploadStrategy import  UploadFileContext, MapColumn
+from . Multilingual import  TranslatorContext
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .API import  API_Context
@@ -102,10 +103,12 @@ def uploadFileToDB(request):
         obj.dopreProcessing(map_column_obj)
         obj.saveFile()
 
-        api_obj= API_Context.TextTranslator()
-        result = api_obj.translate_text('hi',['my name is amol','hey there'])
-        print('AAAAAAAAAAAAAAAAAAA')
-        print(result)
+        translate_obj = TranslatorContext.TranslatorContext()
+        translate_obj.translate()
+       
+        # api_obj= API_Context.TextTranslator()
+        # result = api_obj.translate_text('hi',['my name is amol','hey there'])
+        
         
         messages.success(request, f'You will get Notification through mail after Completion of Task!!! Thank You')
         return render(request, 'CoreApp/home.html')   

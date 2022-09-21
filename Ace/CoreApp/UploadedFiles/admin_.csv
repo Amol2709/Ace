@@ -1,5 +1,10 @@
-phone_number,farmer_name,state_name,district_name,village_name
-999999999,Pandey,Maharashtra,Wardha,Deoli
-888888888,Kartik,Telangana,Rangareddy,Tamsi
-666666666,Aanandan,Maharashtra,Amravati,Amravati
-7777777777,Gupta,Maharashtra,Wardha,Arvi
+officename,pincode,officeType,Deliverystatus,divisionname,regionname,circlename,Taluk,Districtname,statename,Telephone,Related Suboffice,Related Headoffice,longitude,latitude
+Achalapur B.O,504273,B.O,Delivery,Adilabad,Hyderabad,Andhra Pradesh,Asifabad,Adilabad,TELANGANA,,Rechini S.O,Mancherial H.O,,
+Ada B.O,504293,B.O,Delivery,Adilabad,Hyderabad,Andhra Pradesh,Asifabad,Adilabad,TELANGANA,,Asifabad S.O,Mancherial H.O,,
+Adegaon B.O,504307,B.O,Delivery,Adilabad,Hyderabad,Andhra Pradesh,Boath,Adilabad,TELANGANA,,Echoda S.O,Adilabad H.O,,
+Adilabad Collectorate S.O,504001,S.O,Non-Delivery,Adilabad,Hyderabad,Andhra Pradesh,Adilabad,Adilabad,TELANGANA,08732-226703,,Adilabad H.O,,
+Adilabad H.O,504001,H.O,Delivery,Adilabad,Hyderabad,Andhra Pradesh,Adilabad,Adilabad,TELANGANA,08732-226738,,,,
+Agm Colony S.O,504251,S.O,Non-Delivery,Adilabad,Hyderabad,Andhra Pradesh,Bellampalle,Adilabad,TELANGANA,08735-222138,,Mancherial H.O,,
+Ainam B.O,504273,B.O,Delivery,Adilabad,Hyderabad,Andhra Pradesh,Asifabad,Adilabad,TELANGANA,,Rechini S.O,Mancherial H.O,,
+Aknepalli B.O,504251,B.O,Delivery,Adilabad,Hyderabad,Andhra Pradesh,Luxettipet,Adilabad,TELANGANA,,Bellampalli S.O,Mancherial H.O,,
+Akoli B.O,504309,B.O,Delivery,Adilabad,Hyderabad,Andhra Pradesh,Adilabad,Adilabad,TELANGANA,,Gumma S.O (Adilabad),Adilabad H.O,,

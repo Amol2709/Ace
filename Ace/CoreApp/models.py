@@ -9,7 +9,8 @@ class FarmerInfo(models.Model):
     state_name =    models.CharField(max_length=50, null=True)
     district_name = models.CharField(max_length=50, null=True)
     village_name =  models.CharField(max_length=50, null=True)
-    phone =         PhoneNumberField(unique=True)
+    phone =         PhoneNumberField()
+    status = models.BooleanField(default=False)
 
     text_column_1 = models.TextField(null=True)
     text_column_2 = models.TextField(null=True)
@@ -18,13 +19,13 @@ class FarmerInfo(models.Model):
 
 
 class FarmerInfoHindi(models.Model):
-    farmer_id  = models.ForeignKey(FarmerInfo, on_delete=models.CASCADE)
+    farmer_id  = models.IntegerField(primary_key=True)
     first_name =    models.CharField(max_length=50)
     last_name =     models.CharField(max_length=50, null=True)
     state_name =    models.CharField(max_length=50, null=True)
     district_name = models.CharField(max_length=50, null=True)
     village_name =  models.CharField(max_length=50, null=True)
-    phone =         PhoneNumberField(unique=True)
+    phone =         PhoneNumberField()
 
     text_column_1 = models.TextField(null=True)
     text_column_2 = models.TextField(null=True)
@@ -33,13 +34,13 @@ class FarmerInfoHindi(models.Model):
 
 
 class FarmerInfoPunjabi(models.Model):
-    farmer_id  = models.ForeignKey(FarmerInfo, on_delete=models.CASCADE)
+    farmer_id  = models.IntegerField(primary_key=True)
     first_name =    models.CharField(max_length=50)
     last_name =     models.CharField(max_length=50, null=True)
     state_name =    models.CharField(max_length=50, null=True)
     district_name = models.CharField(max_length=50, null=True)
     village_name =  models.CharField(max_length=50, null=True)
-    phone =         PhoneNumberField(unique=True)
+    phone =         PhoneNumberField()
 
     text_column_1 = models.TextField(null=True)
     text_column_2 = models.TextField(null=True)
@@ -48,13 +49,13 @@ class FarmerInfoPunjabi(models.Model):
     
 
 class FarmerInfoMarathi(models.Model):
-    farmer_id  = models.ForeignKey(FarmerInfo, on_delete=models.CASCADE)
+    farmer_id  = models.IntegerField(primary_key=True)
     first_name =    models.CharField(max_length=50)
     last_name =     models.CharField(max_length=50, null=True)
     state_name =    models.CharField(max_length=50, null=True)
     district_name = models.CharField(max_length=50, null=True)
     village_name =  models.CharField(max_length=50, null=True)
-    phone =         PhoneNumberField(unique=True)
+    phone =         PhoneNumberField()
 
     text_column_1 = models.TextField(null=True)
     text_column_2 = models.TextField(null=True)
@@ -64,13 +65,13 @@ class FarmerInfoMarathi(models.Model):
 
 
 class FarmerInfoTelugu(models.Model):
-    farmer_id  = models.ForeignKey(FarmerInfo, on_delete=models.CASCADE)
+    farmer_id  = models.IntegerField(primary_key=True)
     first_name =    models.CharField(max_length=50)
     last_name =     models.CharField(max_length=50, null=True)
     state_name =    models.CharField(max_length=50, null=True)
     district_name = models.CharField(max_length=50, null=True)
     village_name =  models.CharField(max_length=50, null=True)
-    phone =         PhoneNumberField(unique=True)
+    phone =         PhoneNumberField()
 
     text_column_1 = models.TextField(null=True)
     text_column_2 = models.TextField(null=True)
