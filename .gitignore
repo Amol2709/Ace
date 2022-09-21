@@ -1,2 +1,5 @@
 Ace/Ace/.env
 Ace/Ace/GoogleAPICredential.json
+Ace/Ace/__pycache__/*.pyc
+Ace/Authentication/__pycache__/*.pyc
+Ace/CoreApp/__pycache__/*.pyc
