@@ -4,7 +4,7 @@ from .Enums import SupportedFile
 from .FileUploadStrategy import  UploadFileContext, MapColumn
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-
+from .API import  API_Context
 import pandas as pd
 import pathlib
 import  os
@@ -101,6 +101,11 @@ def uploadFileToDB(request):
         obj = UploadFileContext.SaveFileToDB(file_extension,file_name)
         obj.dopreProcessing(map_column_obj)
         obj.saveFile()
+
+        api_obj= API_Context.TextTranslator()
+        result = api_obj.translate_text('hi',['my name is amol','hey there'])
+        print('AAAAAAAAAAAAAAAAAAA')
+        print(result)
         
         messages.success(request, f'You will get Notification through mail after Completion of Task!!! Thank You')
         return render(request, 'CoreApp/home.html')   
