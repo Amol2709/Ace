@@ -34,6 +34,7 @@ different languages.
 9.  GET: getAllFarmerinfo() : http://127.0.0.1:8000/api/get-allfarmer-info/<language_code>/ : Fetch all Information in language Specified.
 10. GET: getFarmerinfo_ID() :  http://127.0.0.1:8000/api/get-allfarmer-info/<id>/<language_code>/ : Fetch Infromation based on ID.
 11. For Api Authentication we are using DRF (Django Rest Framework) in built Token Based Authentication.
+12. For Api Doc We have Used Swagger-UI (for DRF)
 
 
 ---
