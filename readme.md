@@ -30,7 +30,7 @@ different languages.
 
 ### Assumption and Approach:
 
-Markup : - [x] User need to Sign In on to application. (need to create account)
+- [x] User need to Sign In on to application. (need to create account)
 2. Application supports only 4 languages apart from English viz. Hindi, Marathi, Telugu and Punjabi.
 3. Application support Excel (.xlsx) and CSV (.csv) file.
 4. User will upload file where 6 columns are mandatory (FirstName, LastName, StateName, DistrictName, VillageName, Phone)
