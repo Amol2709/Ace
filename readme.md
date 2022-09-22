@@ -13,7 +13,9 @@ About Ace:
 
 
 ## About App:
-===
+
+---
+
 ### Problem Statement:
 1. Task is to develop a web application that helps us convert farmer details from English to
 different languages.
@@ -29,7 +31,7 @@ different languages.
 6. Application will store all information in all supported languages in DB (postgre) 
 7. User can also View Information in all supported languages on to UI itself.
 8. Apart from this, we have also exposed two API endpoints to fetch all information:
-                  * GET: getAllFarmerinfo() : http://127.0.0.1:8000/api/get-allfarmer-info/<language_code>/ : Fetch all Information in language Specified.
+                  - [] GET: getAllFarmerinfo() : http://127.0.0.1:8000/api/get-allfarmer-info/<language_code>/ : Fetch all Information in language Specified.
                   * GET: getFarmerinfo_ID() :  http://127.0.0.1:8000/api/get-allfarmer-info/<id>/<language_code>/ : Fetch Infromation based on ID.
   
 9. For Api Authentication we are using DRF (Django Rest Framework) in built Token Based Authentication.
