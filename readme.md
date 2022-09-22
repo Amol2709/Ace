@@ -8,12 +8,14 @@ About Ace:
 ###### Follow This Step:
 1. Create Account on  Google Cloud Platform 
 2. Follow this step to setup Account [GCP](https://cloud.google.com/translate/docs/setup#windows "GCP Machine Translation").
-3. Create Virtual Environment.
-4. Activate Vurtual Environment 
+3. Create Virtual Environment [VirtualEnv for both Windows and Linux](https://www.geeksforgeeks.org/creating-python-virtual-environment-windows-linux/ "GFG Link for virtual env") 
+4. Activate Virtual Environment. 
 5. Install required packages: pip install -r requirements.txt
 6. Create Django Project : django-admin startproject <Ace>
-8. Create Super User : python manage.py createsuperuser
-6. Create APP: python manage.py startapp <CoreApp>
+7. Create Super User : python manage.py createsuperuser
+8. Create APP: python manage.py startapp <CoreApp>
+9. Keep All Credential (API key and DB password in .env file) [Environmental Variable in Django](https://djangocentral.com/environment-variables-in-django/ "Env Variable in Django")
+
 
 ---
 
