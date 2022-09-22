@@ -1,11 +1,16 @@
 from django.shortcuts import render
 from django.http import JsonResponse,HttpResponse,HttpResponseRedirect
-from .Enums import SupportedFile
+from .Enums import SupportedFile, SupportedLanguage, MultiLingualTable
 from .FileUploadStrategy import  UploadFileContext, MapColumn
 from . Multilingual import  TranslatorContext
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.response import Response
 from .API import  API_Context
+from .DBConnection import EstablishConnection
+from .serializers import FarmerInfoSerializer
 import pandas as pd
 import pathlib
 import  os
@@ -13,6 +18,76 @@ import  os
 
 # import os 
 # os.environ['GOOGLE_APPLICATION_CREDENTIALS']=r'C:\Users\DELL\Desktop\Assignment\cedar-turbine-363017-dff03d15fda1.json'
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def getAllFarmerinfo(request, language_code = 'en'):
+    '''
+        This API will return All Farmer INFO in all supported Languages
+    '''
+    if request.method=='GET':
+        dbObj = EstablishConnection.ReturnConnection()
+        connection = dbObj.newConnection()
+        if language_code in SupportedLanguage.LanguageCode.SUPPORTED_LANGUAGE.value or language_code=='en':
+            tableName = MultiLingualTable.TableLanguageCode.TABLENAME_CODE_MAP.value[language_code]
+            df = pd.read_sql_query('SELECT  first_name, last_name, state_name, village_name, district_name, phone from "{}" '.format(tableName),con= connection)
+            result_data = df.to_dict(orient='records')
+            result = FarmerInfoSerializer(result_data, many=True).data
+            return Response(result)
+        else:
+            return HttpResponse(status=404)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def getFarmerinfo_ID(request, id, language_code='en'):
+    if request.method=='GET':
+        dbObj = EstablishConnection.ReturnConnection()
+        connection = dbObj.newConnection()
+        if language_code in SupportedLanguage.LanguageCode.SUPPORTED_LANGUAGE.value:
+            tableName = MultiLingualTable.TableLanguageCode.TABLENAME_CODE_MAP.value[language_code]
+            df = pd.read_sql_query('SELECT  first_name, last_name, state_name, village_name, district_name, phone from "{}" where farmer_id = {} '.format(tableName,id),con= connection)
+        elif language_code == 'en':
+            tableName = MultiLingualTable.TableLanguageCode.TABLENAME_CODE_MAP.value[language_code]
+            df = pd.read_sql_query('SELECT  first_name, last_name, state_name, village_name, district_name, phone from "{}" where id = {}'.format(tableName,int(id)),con= connection)
+        else:
+            return HttpResponse(status=404)
+        result_data = df.to_dict(orient='records')
+        result = FarmerInfoSerializer(result_data, many=True).data
+        return Response(result)
+
+@login_required
+def viewInfo(request):
+    if request.method == 'POST':
+        language_code = str(request.POST['language_code'])
+        tableName = MultiLingualTable.TableLanguageCode.TABLENAME_CODE_MAP.value[language_code]
+        dbobj = EstablishConnection.ReturnConnection()
+        conn = dbobj.newConnection()
+        df = pd.read_sql_query('SELECT  first_name, last_name, state_name, village_name, district_name, phone from "{}" '.format(tableName),con= conn)
+        #print(df.head())
+        #farmer_id = list(df['id'])
+        f_name  = list(df['first_name'])
+        l_name = list(df['last_name'])
+        state_name = list(df['state_name'])
+        village_name  = list(df['village_name'])
+        district_name = list(df['district_name'])
+        phone = list(df['phone'])
+        farmer_info = tuple(zip(f_name,l_name,state_name,village_name,district_name,phone))
+        context = {
+             'language_support' : ['en']+SupportedLanguage.LanguageCode.SUPPORTED_LANGUAGE.value,
+            'farmer_info':farmer_info
+        }
+        return render(request, 'CoreApp/view_info.html', context)
+    context = {
+        'language_support' : ['en']+SupportedLanguage.LanguageCode.SUPPORTED_LANGUAGE.value
+    }
+    return render(request, 'CoreApp/view_info.html', context)
+
+
+
+
+
+
+
 
 def translate_text(target, text):
     """Translates text into the target language.

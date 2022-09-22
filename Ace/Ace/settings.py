@@ -46,10 +46,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'phonenumber_field',
     'crispy_forms',
     'CoreApp',
-    'Authentication'
+    'Authentication',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -157,7 +159,11 @@ LOGIN_URL = 'authentication/login'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ]
+}
 ######-##------------3rd PartyAPI API-------------------############################
 #         Google API                    #
 os.environ['GOOGLE_APPLICATION_CREDENTIALS']=r'C:\Users\DELL\Desktop\AssignmentSolution\Ace\Ace\GoogleAPICredential.json'
