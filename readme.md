@@ -5,13 +5,16 @@ About Ace:
 #### Installation Setup
 ###### Prerequisite: Python version >=3.6
 ###### Note: I have used postgreSQL but application will work with any relational DB (need to change settings.py)
+###### Follow This Step:
 1. Create Account on  Google Cloud Platform 
 2. Follow this step to setup Account [GCP](https://cloud.google.com/translate/docs/setup#windows "GCP Machine Translation").
 3. Create Virtual Environment.
-4. pip install -r requirements.txt
-5. django-admin startproject <Ace>
-6. python manage.py startapp <CoreApp>
-7. python manage.py createsuperuser
+4. Activate Vurtual Environment 
+5. Install required packages: pip install -r requirements.txt
+6. Create Django Project : django-admin startproject <Ace>
+8. Create Super User : python manage.py createsuperuser
+6. Create APP: python manage.py startapp <CoreApp>
+
 ---
 
 
@@ -22,7 +25,8 @@ About Ace:
 ### Problem Statement:
 1. Task is to develop a web application that helps us convert farmer details from English to
 different languages.
-2. To do this, we will use of Google Translate API. 
+2. To do this, we will use of Google Translate API.
+3. User Should able to retrieve information in all supported langauges 
 
 --- 
 
