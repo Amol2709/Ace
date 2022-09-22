@@ -42,8 +42,8 @@ different languages.
 - [x]  GET: getFarmerinfo_ID() :  http://127.0.0.1:8000/api/get-allfarmer-info/<id>/<language_code>/ : Fetch Infromation based on ID.
 - [x]  For Api Authentication we are using DRF (Django Rest Framework) in built Token Based Authentication.
 - [x]  For Api Doc We have Used Swagger-UI (for DRF)
-- []   Mail Service to notify user once All uploaded data converted in to supported languages
-- []   Need to write test cases
+- [ ]   Mail Service to notify user once All uploaded data converted in to supported languages
+- [ ]   Need to write test cases
 
   
 
