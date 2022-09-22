@@ -30,18 +30,20 @@ different languages.
 
 ### Assumption and Approach:
 
-- [x] User need to Sign In on to application. (need to create account)
-2. Application supports only 4 languages apart from English viz. Hindi, Marathi, Telugu and Punjabi.
-3. Application support Excel (.xlsx) and CSV (.csv) file.
-4. User will upload file where 6 columns are mandatory (FirstName, LastName, StateName, DistrictName, VillageName, Phone)
-5. Once user upload file application will Convert all information in all supported languages.
-6. Application will store all information in all supported languages in DB (postgre) 
-7. User can also View Information in all supported languages on to UI itself.
-8. Apart from this, we have also exposed two API endpoints to fetch all information:
-9.  GET: getAllFarmerinfo() : http://127.0.0.1:8000/api/get-allfarmer-info/<language_code>/ : Fetch all Information in language Specified.
-10. GET: getFarmerinfo_ID() :  http://127.0.0.1:8000/api/get-allfarmer-info/<id>/<language_code>/ : Fetch Infromation based on ID.
-11. For Api Authentication we are using DRF (Django Rest Framework) in built Token Based Authentication.
-12. For Api Doc We have Used Swagger-UI (for DRF)
+- [x]  User need to Sign In on to application. (need to create account)
+- [x]  Application supports only 4 languages apart from English viz. Hindi, Marathi, Telugu and Punjabi.
+- [x]  Application support Excel (.xlsx) and CSV (.csv) file.
+- [x]  User will upload file where 6 columns are mandatory (FirstName, LastName, StateName, DistrictName, VillageName, Phone)
+- [x]  Once user upload file application will Convert all information in all supported languages.
+- [x]  Application will store all information in all supported languages in DB (postgre) 
+- [x]  User can also View Information in all supported languages on to UI itself.
+- [x]  Apart from this, we have also exposed two API endpoints to fetch all information:
+- [x]  getAllFarmerinfo() : http://127.0.0.1:8000/api/get-allfarmer-info/<language_code>/ : Fetch all Information in language Specified.
+- [x]  GET: getFarmerinfo_ID() :  http://127.0.0.1:8000/api/get-allfarmer-info/<id>/<language_code>/ : Fetch Infromation based on ID.
+- [x]  For Api Authentication we are using DRF (Django Rest Framework) in built Token Based Authentication.
+- [x]  For Api Doc We have Used Swagger-UI (for DRF)
+- []   Mail Service to notify user once All uploaded data converted in to supported languages
+- []   Need to write test cases
 
   
 
