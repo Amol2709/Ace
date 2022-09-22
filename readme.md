@@ -21,7 +21,14 @@ About Ace:
 different languages.
 2. To do this, we will use of Google Translate API. 
 
-### Assumption and Solution Flow:
+--- 
+
+### Solution Flow:
+
+![Solution_Flow](https://user-images.githubusercontent.com/49105701/191795133-9af00939-db18-4ed6-ab7e-874201269488.png)
+
+
+### Assumption and Approach:
 
 1. User need to Sign In on to application. (need to create account)
 2. Application supports only 4 languages apart from English viz. Hindi, Marathi, Telugu and Punjabi.
@@ -37,7 +44,5 @@ different languages.
 12. For Api Doc We have Used Swagger-UI (for DRF)
 
   
-! [alt text](https://raw.githubusercontent.com/Amol2709/Ace/main/Solution_Flow.png)
 
----![Solution_Flow](https://user-images.githubusercontent.com/49105701/191794810-bffcea03-b069-48bc-a847-d6e1bf71fd1c.png)
 
