@@ -49,7 +49,8 @@ different languages.
 - [ ]   Need to write test cases
  
  ### Note : 
- ###### Our Service is highly depending on Third PartyApi in this case (Google Translator API) , if API goes down we don;t want extra down time in our service,so we ###### can use Adapter Design Pattern here that will eliminate Third Party API dependency.
+ ###### Our Service is highly depending on Third PartyApi in this case (Google Translator API) , if API goes down we don;t want extra down time in our service,so we
+ can use Adapter Design Pattern here that will eliminate Third Party API dependency.
   
  
   
