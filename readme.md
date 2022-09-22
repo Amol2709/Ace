@@ -47,6 +47,15 @@ different languages.
 - [x]  For Api Doc We have Used Swagger-UI (for DRF)
 - [ ]   Mail Service to notify user once All uploaded data converted in to supported languages
 - [ ]   Need to write test cases
+ 
+ ### Note : 
+  : * Our Service is highly depending on Third PartyApi in this case (Google Translator API) , if API goes down we don;t want extra down time in our service,
+  so we can use Adapter Design Pattern here that will eliminate Third Party API dependency.
+  
+ 
+  
+  
+![AdapterDesignForTransLAtionAPI](https://user-images.githubusercontent.com/49105701/191804227-1eb7253b-a941-41c4-804c-7ec0bacafe6f.JPG)
 
   
 
