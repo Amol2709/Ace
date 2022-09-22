@@ -61,6 +61,13 @@ different languages.
   
 ![AdapterDesignForTransLAtionAPI](https://user-images.githubusercontent.com/49105701/191804227-1eb7253b-a941-41c4-804c-7ec0bacafe6f.JPG)
 
-  
 
 
+#### Scope of Improvment(In Future):
+- [ ]   Mail Service to notify user once All uploaded data converted in to supported languages
+- [ ]   Need to write test cases
+- [ ]   Handle All Corner Cases
+- [ ]   Enhanced UI
+- [ ]   Non Relational DB will work if we are uploading File that do not have any specific structure(Predefined set of columns).
+- [ ]   Decoupled Backend from Frotend so that both can scale independently.
+- [ ]   Cache Frequently Used Data (based on requiremnet)
