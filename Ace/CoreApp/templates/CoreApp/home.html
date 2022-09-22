@@ -1,10 +1,17 @@
 {% extends "CoreApp/base.html" %}
-
+{% load static %}
 {% block content %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+<link rel="stylesheet" href="{% static 'CoreApp/style.css' %}">
+
+
+      <!-- CSS only bootstrap -->
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <style>
-.wrapper {
-  text-align: center;
-}
+
 
 .button_div {
   position: absolute;
@@ -16,32 +23,70 @@
   position: fixed;
   top: 55%;
   left:28%;
+  font-size: 18px;
+  font-style: italic;
 }
 .text_content_2 {
   position: fixed;
   top: 59%;
   left:28%;
+  font-size: 18px;
+  font-style: italic;
 }
 .text_content_3 {
   position: fixed;
   top: 63%;
   left:28%;
+  font-size: 18px;
+  font-style: italic;
 }
   </style>
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <div class="wrapper">
+      <div class="sidebar">
+        
+        <ul>
+          <li>
+            <a href="{% url 'CoreApp:home' %}" >
+                <span class="icon"><i class="fas fa-home"></i></span>
+                <span class="item">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'Authentication:logout' %}">
+                <span class="icon"><i class="fas fa-cog"></i></span>
+                <span class="item">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="section"> 
+      <div class="top_navbar"> 
+          <div class="hamburger">
+              <a>
+                  <i class="fas fa-bars" style="color:  #1BA098;"></i>
+              </a>
+          </div>
+      </div>
+    </div>
+
 
  {% if messages %}
  {% for message in messages %}
- <div class="alert alert-{{ message.tags }}">
-   {{ message }}
+ <div class="alert alert-{{ message.tags }} alert-dismissible"  role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="True">&times;</span>
+  </button> 
+  {{ message }}
  </div>
  {% endfor %}
  {% endif %}
 
-<div class="wrapper">
+<div style="text-align: center;">
     <div class="button_div">
-        <button type="button" class=" btn btn-secondary btn-lg" data-toggle="modal" data-target="#myModal">Upload Data</button>
-    </div>
+        <button type="button" class=" btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" style="font-size:medium">Upload Data</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="{% url 'CoreApp:view_info' %}" class=" btn btn-info btn-lg" style="font-size:medium">View Info</a>
+      </div>
     <div class = "text_content_1" > 
       <ul>
         <li style="color:white; font-size:larger;">Translation AI Make your content and apps multilingual with fast, dynamic machine translation.</li>
@@ -96,12 +141,19 @@
               </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+          <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+      
         </div>
       </div>
     </div>
   </div>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+    var hamburger = document.querySelector(".hamburger");
+        hamburger.addEventListener("click", function(){
+            document.querySelector("body").classList.toggle("active");
+        })
+  </script>
 {% endblock content %}
