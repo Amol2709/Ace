@@ -2,7 +2,16 @@
 
 Setup Steps:
 ===
-1. SignIN to Google Cloud Platform For using Machine Translation API [GCP](https://cloud.google.com/translate/docs/setup#windows "GCP Machine Translation")
-1. Create Virtual Environment
-2. pip install -r requirements.txt
+###### Prerequisite: Python version >=3.6
+1. Create Account on  Google Cloud Platform 
+2. Follow this step to setup Account [GCP](https://cloud.google.com/translate/docs/setup#windows "GCP Machine Translation").
+3. Create Virtual Environment.
+4. pip install -r requirements.txt
+---
+
+
+#### About App:
+
+===
+
 ---
