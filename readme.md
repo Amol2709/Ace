@@ -37,6 +37,6 @@ different languages.
 12. For Api Doc We have Used Swagger-UI (for DRF)
 
   
-! [alt text](https://github.com/Amol2709/Ace/blob/main/Solution_Flow.png)
+! [alt text](https://raw.githubusercontent.com/Amol2709/Ace/main/Solution_Flow.png)
 
 ---
