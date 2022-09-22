@@ -9,6 +9,9 @@ About Ace:
 2. Follow this step to setup Account [GCP](https://cloud.google.com/translate/docs/setup#windows "GCP Machine Translation").
 3. Create Virtual Environment.
 4. pip install -r requirements.txt
+5. django-admin startproject <Ace>
+6. python manage.py startapp <CoreApp>
+7. python manage.py createsuperuser
 ---
 
 
