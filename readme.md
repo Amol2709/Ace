@@ -1,6 +1,6 @@
 
 
-About Ace:
+About Ace (Name of my Django Project):
 ===
 #### Installation Setup
 ###### Prerequisite: Python version >=3.6
