@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'CoreApp',
     'Authentication',
     'rest_framework.authtoken',
+    'coreapi',
+    'drf_yasg'
 ]
 
 MIDDLEWARE = [
@@ -163,6 +165,19 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
     ]
+}
+
+SWAGGER_SETTINGS = {
+   'SECURITY_DEFINITIONS': {
+      'Basic': {
+            'type': 'basic'
+      },
+      'Bearer': {
+            'type': 'apiKey',
+            'name': 'Authorization',
+            'in': 'header'
+      }
+   }
 }
 ######-##------------3rd PartyAPI API-------------------############################
 #         Google API                    #
